@@ -1,0 +1,24 @@
+{
+  "name": "arm-mem",
+  "version": "0.1.0",
+  "description": "Small agents, shared SQLite memory, DeepSeek Flash at maximum reasoning.",
+  "type": "module",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/luisbebop/arm-mem.git" },
+  "homepage": "https://github.com/luisbebop/arm-mem#readme",
+  "bugs": { "url": "https://github.com/luisbebop/arm-mem/issues" },
+  "engines": { "node": ">=22.18.0" },
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "bin": { "arm-mem": "./dist/cli.js" },
+  "files": ["dist", "src", "examples", "test", "tsconfig.json", ".env.example", "VALIDATION.md"],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "test:live": "npm run build && node --env-file-if-exists=.env test/live.mjs",
+    "cli": "node --env-file-if-exists=.env dist/cli.js",
+    "example": "node --env-file-if-exists=.env examples/basic.ts",
+    "prepack": "npm run build"
+  },
+  "dependencies": { "js-tiktoken": "1.0.21" },
+  "devDependencies": { "@types/node": "22.20.5", "typescript": "7.0.2" }
+}

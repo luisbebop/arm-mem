@@ -1,0 +1,471 @@
+{
+  "source": "Unchanged original swarm.py + o200k_base; generated offline from synthetic text.",
+  "source_sha256": "b5bcd0b78469b05f8740c41ff2dfbfa622797411ac95bb77acb0aef2ed97b20a",
+  "memories": [
+    {
+      "content": "Cedar uses Postgres.",
+      "evidence": "Synthetic fixture",
+      "status": "retired"
+    },
+    {
+      "content": "Cedar uses SQLite.",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar database policy changed on Tuesday.",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "São Paulo café: prefere café sem açúcar.",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "猫 東京 旅行 水曜日",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar backup procedure preserves WAL data.",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Unrelated orchard planting and irrigation.",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 0: garden ledger source document notes report fact network source ledger fact topic report report notes garden document ledger calendar document fact project ledger network calendar calendar fact fact report garden analysis water fact water topic ledger network topic topic calendar project garden analysis calendar document analysis network archive ledger analysis fact ledger ledger topic fact archive network ledger topic report report network project calendar ledger project notes notes fact source analysis fact document archive topic archive document fact fact topic report archive garden network topic archive document ledger ledger water document ledger notes topic fact document source source water notes topic notes ledger archive ledger ledger water ledger project garden topic network source analysis report water notes report water calendar source fact calendar garden fact analysis archive report network calendar source report network document notes garden report calendar garden calendar ledger notes water calendar ledger document ledger topic report notes analysis archive fact fact source fact source source garden report source source source report fact report water ledger water network network water source notes document report analysis ledger archive archive project project notes ledger topic archive calendar archive ledger ledger project fact water ledger water archive calendar garden network fact project garden topic ledger analysis ledger topic project topic analysis document archive network calendar document network ledger garden fact ledger fact analysis ledger ledger document water ledger network topic report topic report ledger garden report ledg",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 1: ledger analysis project ledger report source source water notes source source fact ledger project archive fact topic fact water ledger notes notes report analysis calendar project network notes network archive source source network fact report fact notes document network analysis ledger document source analysis network report document fact topic source archive ledger garden topic garden report calendar ledger report source fact ledger analysis ledger report report garden project garden report report calendar garden fact document report document water garden topic document notes water ledger archive analysis ledger calendar ledger ledger document garden ledger calendar ledger document ledger report project garden source analysis topic fact analysis ledger ledger water fact notes calendar analysis water project garden fact archive water garden archive ledger archive analysis archive network source garden notes water source source source calendar fact network archive document garden topic network project ledger archive report fact water report water ledger archive analysis archive ledger calendar document network garden topic calendar ledger calendar ledger ledger ledger topic report fact garden source notes source garden project network project fact archive source network ledger ledger topic archive document topic project source document water source topic report notes network source document water fact ledger network notes network water report notes network document fact document water garden fact water fact notes water fact analysis garden network project ledger source ledger source report fact fact fact water source archive document notes ledger archive",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 2: analysis project topic report project source water analysis topic ledger network topic document report source water project report analysis notes calendar source water archive report source fact ledger archive source ledger garden analysis archive fact ledger topic fact ledger topic water topic source calendar project source fact document garden project calendar source calendar ledger water analysis archive document document project fact ledger ledger garden archive topic document source topic analysis water network water fact archive topic water document document analysis analysis garden project project ledger topic ledger document ledger garden topic report garden report archive ledger project water analysis garden archive calendar ledger network source notes archive ledger archive project network calendar water project network calendar network ledger source calendar document source ledger notes ledger document archive topic analysis garden project source garden analysis archive water calendar fact water project fact calendar source ledger project source network archive fact ledger source garden document topic ledger source network ledger fact calendar topic ledger project report analysis calendar notes calendar archive archive calendar analysis archive fact notes document ledger report water ledger notes notes calendar project garden report ledger garden analysis calendar source calendar topic ledger document network project network garden water source report document document topic document report ledger analysis network network garden notes topic ledger topic notes garden calendar notes calendar garden source project ledger fact topic notes report w",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 3: fact archive analysis network topic ledger water calendar project notes garden network archive fact source ledger ledger document network source project source report garden notes analysis ledger fact ledger archive fact notes source topic garden source notes document water water document ledger source network water fact notes document archive document garden ledger network source garden notes topic notes document calendar water archive ledger document calendar garden garden notes notes document source analysis project ledger analysis calendar notes water water garden project report topic ledger ledger report garden archive ledger water ledger project garden analysis project network archive calendar source archive garden source water source archive analysis water report document ledger ledger report ledger garden calendar analysis source document calendar ledger garden analysis analysis analysis fact ledger topic report topic report topic network network source calendar project notes calendar topic archive report fact archive network archive fact analysis ledger document ledger network analysis analysis ledger source report report garden document water network calendar report archive project analysis water network analysis fact project fact report document topic analysis ledger report garden report ledger report report document document ledger archive source report archive source network ledger report water fact analysis project ledger document fact document project ledger water topic analysis report ledger garden garden topic ledger document ledger fact project project source topic topic ledger water water fact source topic document calendar water archi",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 4: fact notes ledger topic document archive ledger topic project notes source calendar report analysis source water water document ledger source archive calendar garden project network archive analysis garden topic report fact project source project analysis network analysis topic report fact analysis water archive source report fact water report project project ledger project garden garden garden topic ledger fact report garden calendar water topic report ledger ledger garden garden calendar document document analysis project document water notes fact garden ledger project ledger calendar garden fact ledger water ledger analysis calendar topic water archive notes fact notes source fact garden calendar archive fact garden water topic network project analysis water archive ledger topic network analysis source fact calendar ledger document document source source archive notes ledger document topic notes ledger topic ledger calendar analysis project network archive garden notes network garden fact analysis fact ledger ledger archive topic fact ledger project report network ledger ledger analysis water document source source notes project document analysis water project ledger archive network notes ledger report archive water source archive garden topic ledger source source water water garden archive notes document document fact project archive network report ledger document project water topic topic calendar network ledger report network analysis source source archive project project water topic network notes ledger ledger garden analysis notes source notes report water topic ledger ledger source analysis garden garden network source archive fact source fact p",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 5: notes topic ledger document ledger project notes project report source document report archive fact analysis notes report source calendar source ledger calendar ledger fact report ledger ledger archive ledger network document water ledger water ledger network notes project ledger project project analysis fact ledger analysis report notes document fact report analysis ledger fact ledger garden garden calendar fact source analysis network water water source water network ledger notes notes notes calendar archive notes topic project calendar topic ledger source notes water source analysis garden source network garden notes network water notes document topic project topic ledger ledger project topic calendar archive source fact report archive archive project calendar network archive source document source analysis network fact ledger analysis garden document topic ledger network topic calendar ledger garden topic fact document ledger network report project fact fact water topic calendar document garden fact analysis fact network calendar analysis archive notes report water fact analysis calendar source archive ledger fact topic network report water report project ledger project project ledger analysis report calendar source ledger ledger water project report notes calendar report source project fact calendar water document calendar water report ledger report source garden archive water topic fact network water document ledger garden water document archive network ledger ledger project archive water water ledger calendar calendar analysis water archive document ledger document analysis fact ledger topic water source calendar notes notes analysis water source ",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 6: ledger notes source analysis water analysis fact water water project ledger ledger garden archive analysis topic calendar notes document fact project ledger ledger calendar analysis source water project notes water garden archive fact calendar source source archive calendar document water ledger calendar archive document calendar notes document calendar notes ledger calendar analysis document ledger archive calendar water network garden network project garden garden garden water analysis report calendar calendar report garden garden water topic report fact document notes network topic source archive fact archive document archive source ledger topic garden document water ledger notes ledger topic analysis water calendar notes document project water report fact topic fact source project network topic network water archive water notes project calendar project water source network source topic document ledger topic garden topic report fact notes archive project topic report archive ledger fact project topic project document garden fact report calendar notes ledger ledger calendar archive ledger topic report analysis analysis ledger fact source fact water ledger report analysis ledger fact notes water ledger document network topic garden ledger document ledger fact garden fact document analysis archive ledger ledger project garden document ledger topic document topic notes ledger project analysis notes notes topic calendar topic project water document network report notes document garden notes ledger document notes analysis garden notes ledger document network source document garden calendar source ledger calendar report water report garden network source led",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 7: ledger ledger water network fact notes document fact archive ledger garden topic calendar source calendar ledger network report archive document document analysis garden document ledger ledger calendar analysis report ledger document project calendar water water report project garden topic archive topic project archive report document report document archive calendar project notes notes analysis ledger document water network network project topic document source document water ledger project report report source network document fact source topic calendar garden fact report fact report analysis source fact ledger ledger ledger document ledger ledger analysis fact report network report source notes network document calendar water document source calendar source archive document source fact source calendar analysis topic topic notes ledger network ledger topic garden analysis archive analysis water source water ledger topic garden garden source report ledger topic garden archive ledger network source water ledger document fact analysis calendar fact project ledger analysis project project fact source notes calendar ledger report network water garden ledger fact garden garden ledger archive network calendar topic fact topic fact notes water archive ledger source notes report ledger report archive source network garden archive water network document water ledger analysis topic fact source network report garden ledger ledger notes garden archive network ledger notes project topic calendar project calendar notes archive notes network network water topic network project network report document source source analysis source notes topic topic topic source ledger ",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 8: garden topic garden analysis ledger ledger document water document report garden calendar network water calendar report calendar garden notes topic document ledger archive analysis analysis water network source report archive fact archive ledger analysis calendar report calendar ledger notes fact source network garden document fact water calendar archive water calendar source topic network calendar source calendar ledger report analysis analysis fact report ledger fact project project fact calendar ledger archive project notes ledger report source source source fact network project network notes notes topic topic calendar ledger water notes water ledger notes network document source report document report network report ledger document ledger report network topic analysis archive network report ledger analysis notes ledger garden analysis garden garden topic document water fact document source garden project ledger archive document calendar document calendar ledger calendar garden water notes document archive fact source ledger calendar ledger garden analysis water source report water topic garden source archive network ledger calendar source ledger garden archive ledger project water fact ledger calendar calendar garden ledger analysis analysis ledger calendar calendar notes topic ledger source topic document garden report calendar calendar network notes fact project source source ledger fact document calendar topic topic topic report water calendar report fact water fact notes source analysis report document report project fact water fact project water network garden ledger analysis analysis ledger network notes topic garden garden project notes water ",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 9: ledger analysis source ledger water ledger calendar fact garden topic water archive ledger notes ledger project network ledger ledger calendar calendar garden project water water notes ledger report archive fact garden garden topic document water document ledger network network project garden network water fact calendar calendar fact source fact ledger archive fact garden ledger document project project ledger report report document document ledger document project ledger water topic ledger ledger archive fact ledger garden notes garden garden source source water notes calendar archive notes fact fact archive topic notes ledger network fact document notes report archive calendar notes analysis analysis ledger water source analysis calendar analysis source project project topic document water source water garden fact topic document analysis fact ledger project analysis archive fact ledger source fact notes calendar calendar fact document project archive garden water report document source topic calendar source document garden report archive archive fact document notes source calendar garden ledger analysis report notes analysis garden ledger source notes notes network project water topic report calendar ledger notes fact document fact report topic archive calendar source analysis archive document report analysis source document fact document water garden document document project garden source fact calendar notes topic ledger fact fact network project topic archive notes fact calendar notes topic fact topic report project notes archive garden network analysis archive water project source ledger document source ledger topic fact analysis garden ledger anal",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 10: water network analysis garden ledger fact topic garden report calendar fact water report water water notes fact analysis calendar archive archive report ledger ledger calendar water document garden water topic garden water archive report calendar calendar calendar water water topic garden ledger analysis calendar garden garden analysis report notes project project archive topic source source topic topic source project garden notes analysis document source project fact project network analysis report calendar garden report archive archive source project archive source calendar project notes source topic source project notes fact source source ledger garden analysis ledger fact notes ledger archive report archive ledger topic analysis ledger fact water topic analysis fact analysis network archive analysis topic topic notes ledger topic garden garden water garden calendar fact report ledger topic ledger calendar fact network archive network archive archive garden source garden water notes ledger project document report analysis garden document ledger water calendar calendar ledger project notes archive network source network report ledger water notes project topic ledger project network fact analysis notes fact garden analysis source notes ledger fact source document ledger topic archive document archive document archive analysis archive ledger document water report ledger document notes water source topic topic analysis notes project garden fact fact ledger network source archive analysis network topic garden fact notes report archive report source fact document notes ledger topic analysis topic document source topic topic water archive ledger project top",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 11: fact ledger water source ledger source garden topic calendar fact project analysis document calendar ledger topic garden project topic archive archive notes source project notes archive document report report document fact topic archive archive source notes ledger notes report source topic fact document network notes document analysis fact archive notes archive garden source calendar network water notes network network analysis fact ledger calendar archive report notes calendar project source analysis archive project report network document topic ledger fact report garden ledger project garden source ledger source report ledger garden ledger archive notes topic ledger garden water document project analysis source water analysis project project water notes notes ledger notes project topic network water garden water network fact fact ledger calendar project topic source document notes analysis ledger topic analysis analysis document ledger project project water document topic ledger notes topic calendar fact calendar water calendar ledger garden ledger report notes report notes topic fact ledger report ledger garden water network network garden water project project network ledger network ledger project ledger notes report water ledger archive fact network report water fact water report water source project source notes ledger water source ledger calendar report calendar ledger garden fact report water project calendar calendar fact garden topic water water document fact fact fact notes analysis notes archive document report ledger garden notes archive calendar source analysis notes notes notes fact source network document report topic project archive arc",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 12: garden network calendar topic water ledger report ledger archive ledger analysis ledger source calendar project fact document ledger archive project project project analysis document analysis garden analysis document water notes fact garden source garden analysis fact fact calendar document notes network analysis document fact network fact source archive archive fact ledger source ledger report ledger calendar report ledger project topic network report water document water document network calendar garden water source fact source analysis report document fact topic source ledger network water archive ledger network analysis ledger network water archive garden document garden analysis fact fact calendar fact ledger source network analysis analysis ledger project analysis topic archive archive topic ledger document network ledger water analysis water ledger project water project document water source analysis garden document ledger document archive calendar project report network network water fact network garden project garden calendar project fact analysis network archive report report notes report report calendar notes calendar water calendar archive ledger analysis notes source source water fact project ledger ledger ledger fact calendar garden archive garden project network water document archive water garden notes analysis report source project document water notes ledger ledger water notes report topic network notes garden archive fact archive water water calendar notes fact water network document ledger topic source notes project notes calendar archive document topic analysis project report document report source document source notes network anal",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 13: archive topic water notes notes document topic water archive project report archive document topic calendar report fact report project garden calendar calendar analysis topic source topic network network garden ledger topic water analysis document calendar ledger report garden project notes report garden document topic ledger notes archive garden report report project document fact ledger fact ledger source report ledger report calendar analysis document fact fact archive topic document project ledger network ledger topic fact network notes source ledger network notes document archive document topic archive fact water ledger topic project analysis network fact project source calendar source ledger garden project analysis topic ledger notes network analysis water garden archive ledger fact source ledger calendar project water network notes topic water document notes calendar notes water topic notes document analysis source calendar notes fact network calendar water calendar archive ledger calendar garden project water ledger topic topic notes water garden ledger report analysis project analysis project source fact calendar topic document network calendar water source archive water analysis document ledger report notes source fact source ledger ledger fact garden fact notes topic analysis ledger garden ledger analysis topic garden document source archive analysis ledger ledger fact notes notes fact ledger source fact document water project garden notes fact document analysis topic report water fact analysis ledger analysis project ledger source report water project ledger notes notes report fact document topic garden archive document archive source archiv",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 14: notes fact topic fact water topic source document water analysis fact source document water water notes notes water report ledger project calendar notes calendar archive garden calendar project network archive project project ledger notes topic project fact network ledger archive document analysis source document network fact source fact document source analysis topic document fact fact garden project fact archive calendar notes water project project ledger document calendar garden source topic project notes report water notes document project garden topic water ledger report analysis archive source notes water fact fact analysis source garden ledger project project water source archive ledger analysis document garden garden project ledger topic project notes water garden archive analysis ledger fact topic topic garden document notes report notes analysis ledger water project network water source analysis analysis network fact network garden ledger topic analysis water network topic water ledger report water water network garden ledger ledger analysis analysis network document ledger network calendar project project network project document analysis water ledger analysis analysis project topic project ledger fact notes analysis ledger calendar source document project report report report garden analysis network notes fact project analysis ledger document project project archive analysis report source report archive water report calendar project calendar topic analysis source calendar topic analysis analysis analysis network water source fact fact document project ledger report fact source garden source analysis fact network ledger calendar calendar sour",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 15: project fact network project archive project topic fact report garden fact archive garden report analysis water archive source network ledger water network ledger notes archive source report report ledger project analysis fact fact analysis ledger network calendar fact report document topic calendar calendar ledger fact ledger document calendar analysis archive archive fact ledger ledger analysis fact report ledger source topic garden calendar document fact ledger topic project fact archive notes garden report archive water garden water fact source archive ledger water source topic source water fact garden archive archive project ledger document water ledger ledger project notes archive document notes archive report project analysis notes ledger topic document ledger topic project fact network fact archive project network ledger project network water network topic fact project project source report ledger archive calendar source water network archive analysis report garden topic garden calendar notes archive source water ledger report project ledger water project document ledger ledger water water source water project archive fact notes network analysis topic ledger archive fact project water ledger fact network analysis archive report report topic report notes garden notes archive source garden notes water ledger calendar water notes water report source topic project calendar calendar water analysis archive notes calendar ledger fact source water fact calendar project report topic calendar fact water ledger ledger topic water ledger fact ledger document water network topic source notes archive analysis analysis document fact garden report ledger water ",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 16: report fact analysis water fact ledger ledger garden notes network calendar fact report calendar topic ledger notes notes ledger network ledger project garden archive ledger source archive network ledger ledger notes ledger fact document fact water project network topic garden analysis fact garden calendar ledger report report water ledger ledger archive notes calendar project analysis source ledger document archive fact fact water project calendar fact document water analysis fact report project archive archive topic archive water topic analysis ledger project document network ledger calendar network analysis report source ledger fact archive ledger garden calendar notes archive source analysis ledger network water report water calendar topic topic ledger network source water analysis network water calendar topic archive ledger fact calendar source fact fact calendar report archive network fact report calendar document archive analysis network archive analysis report topic ledger garden project notes notes analysis topic project fact fact notes source source analysis ledger notes calendar report document analysis notes garden report calendar report document project ledger ledger report topic report garden topic topic network project network archive water garden garden source project source fact ledger document fact analysis report notes notes network document ledger project archive topic ledger calendar report calendar report document source ledger topic archive fact garden water fact fact fact analysis water project analysis document archive network ledger project source fact source analysis analysis water document archive fact ledger garden document ",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 17: calendar analysis topic report source network network topic analysis network notes water notes report network fact analysis project garden notes project report network ledger topic document calendar fact calendar ledger fact calendar topic calendar network archive garden fact analysis notes water topic notes ledger network archive ledger notes topic analysis archive document project garden topic project analysis ledger calendar garden archive source water source source network analysis network topic topic network source notes water water project document network fact topic topic network network analysis source ledger document report ledger network network fact document project garden network ledger report network water topic report network report ledger analysis fact fact analysis water ledger archive topic ledger notes notes calendar calendar ledger garden project ledger ledger project ledger ledger garden water notes document archive garden ledger source notes archive document source topic water garden ledger ledger fact network notes network report network topic notes garden analysis project fact ledger ledger fact project topic ledger network fact ledger fact garden source water document project report water notes fact archive network project notes network analysis ledger fact topic water document calendar garden report network source document network report report project source ledger topic analysis calendar water garden report document topic document project ledger network report document fact source analysis garden water project garden ledger topic report calendar source report water project source ledger notes source ledger ledger topic fact ar",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 18: calendar project topic ledger garden report analysis ledger topic water fact water analysis network report network analysis report notes report ledger fact document water source garden ledger topic analysis topic ledger analysis water source document document fact ledger topic calendar analysis fact notes source calendar notes ledger calendar project ledger garden calendar document calendar analysis garden notes document report archive notes ledger ledger water analysis ledger ledger ledger notes source project analysis calendar ledger report report ledger ledger ledger archive document topic topic source fact ledger garden calendar ledger calendar garden analysis fact project ledger network report analysis project report source ledger calendar source calendar archive document network analysis garden topic garden project archive fact fact report ledger source notes calendar notes ledger water notes garden report fact archive network document source source network project analysis garden document network ledger fact fact topic project notes ledger ledger calendar garden notes source ledger calendar notes fact network calendar ledger document fact report fact project archive network archive project analysis document analysis network archive calendar fact notes fact ledger report network project analysis calendar source network topic archive report report ledger ledger fact notes topic source ledger ledger garden ledger archive ledger analysis ledger project ledger analysis network report network ledger ledger garden garden ledger notes fact calendar source garden topic analysis garden ledger calendar document archive ledger water source ledger ledger anal",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 19: archive project report project notes water source analysis document network fact topic topic topic project archive water archive ledger garden ledger calendar ledger document analysis fact source report notes topic ledger archive report calendar garden calendar topic analysis archive archive report archive notes garden calendar notes analysis analysis topic analysis garden report report document topic archive archive ledger network fact ledger fact garden calendar source project ledger document calendar calendar topic project calendar report archive ledger archive analysis water garden calendar analysis analysis calendar source water report fact water calendar notes analysis water report report document network water fact analysis garden garden network notes source network notes archive document report report topic water report project notes document project document report network network calendar report notes analysis network report ledger document report document water project topic fact fact fact fact document topic document ledger network water report fact calendar garden fact calendar source report garden document notes report notes ledger notes calendar ledger network report topic analysis notes analysis water source fact report document network fact ledger ledger analysis report fact notes analysis ledger archive project calendar topic document report ledger calendar analysis ledger water report garden network topic archive archive water fact project ledger analysis notes network ledger garden garden ledger project project project analysis network ledger topic project source garden notes garden project source project source notes water project p",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 20: topic report fact network report notes report project network project calendar network topic garden analysis notes ledger document document analysis ledger water notes network topic project project source network report water document fact calendar topic calendar topic notes analysis archive analysis network topic source network project analysis notes ledger archive source project analysis notes notes project project report ledger document notes source fact calendar ledger water topic archive analysis network calendar project ledger source archive analysis calendar notes source fact topic fact water ledger project document analysis fact report network garden network calendar source archive project water analysis project calendar archive network fact garden analysis source calendar ledger fact document calendar notes source topic ledger ledger source document topic network analysis water network garden fact analysis calendar ledger report project archive topic archive document document ledger calendar report calendar garden ledger ledger topic topic fact source garden project document ledger water document analysis project archive notes archive report garden report ledger ledger ledger topic source calendar topic archive ledger notes ledger archive garden network analysis fact notes topic network archive source project archive project ledger report topic source document report report network network garden calendar ledger analysis source analysis source water analysis ledger network ledger calendar archive garden report analysis topic project ledger water report calendar network analysis project notes ledger source ledger report project garden source fac",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 21: document report archive fact report ledger garden report ledger topic report network network report water document ledger notes report notes report report project project ledger ledger report calendar garden notes ledger fact calendar network archive water garden calendar ledger garden report source source archive document ledger report calendar project notes topic fact garden notes water fact source topic calendar report analysis calendar ledger water source project calendar calendar ledger analysis notes calendar network network source network project analysis fact garden ledger source report project ledger calendar garden network calendar report analysis ledger ledger project notes ledger ledger network topic garden document notes network archive archive document notes calendar archive network fact source fact topic network fact project ledger fact analysis archive garden project source ledger project topic fact project network document network ledger water source calendar report garden network source analysis topic notes fact network report water document report notes water garden fact water calendar analysis notes ledger calendar analysis network ledger water garden ledger calendar water project analysis topic calendar ledger network report ledger network calendar topic ledger source garden water ledger network ledger project ledger ledger fact ledger water calendar ledger water notes document garden fact source project source project archive ledger project garden topic project project project calendar ledger fact topic garden calendar project source analysis topic topic ledger ledger network analysis topic ledger report report calendar source proj",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 22: calendar garden source network ledger ledger garden notes source report report garden ledger water source ledger network project water water project document network source water archive analysis calendar report calendar topic ledger report analysis notes network calendar topic ledger calendar notes calendar network fact ledger network analysis project project analysis calendar source network ledger ledger ledger source network network ledger ledger fact fact ledger topic report network topic ledger ledger analysis garden analysis ledger document report ledger project topic archive archive document calendar garden analysis calendar ledger garden network ledger water water report ledger garden topic topic project notes calendar document notes water ledger document archive network archive garden report analysis topic archive calendar notes ledger topic ledger network source water calendar notes water fact calendar calendar ledger calendar garden water analysis network project analysis source source analysis ledger topic source fact ledger document ledger ledger garden notes source fact analysis garden report ledger notes project document topic garden fact network topic notes analysis report project analysis project water notes garden ledger notes garden topic fact topic calendar network notes notes garden project garden document garden topic garden calendar network source water fact report project water network source document network report ledger report archive report archive source source ledger archive network water ledger project project source document ledger topic project topic report source archive ledger report document analysis report topic docu",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 23: network source document network calendar document ledger network garden network garden report garden ledger ledger analysis water project fact report report document source topic analysis calendar notes fact ledger water network report fact source project ledger notes source analysis project ledger report calendar ledger project notes network archive source ledger source calendar garden ledger document garden network calendar project ledger source network network archive project network project report ledger fact analysis document source fact report garden source notes archive fact analysis archive source fact document calendar garden report garden source ledger calendar notes document archive topic project archive ledger ledger report document ledger ledger water ledger document report calendar water network document garden document notes water source water notes notes source analysis network garden calendar ledger ledger ledger topic project calendar fact garden source archive project document notes analysis ledger archive report fact report project network ledger calendar network notes project network notes document topic fact archive project ledger topic document water analysis garden calendar archive archive fact notes project source source topic analysis topic notes topic topic network calendar notes ledger water ledger topic analysis ledger topic garden water garden archive project analysis ledger network report ledger ledger water calendar fact notes ledger network ledger source archive archive report document calendar calendar notes ledger archive analysis water water ledger garden ledger calendar ledger archive project notes topic analysis top",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 24: water archive notes network notes garden source water ledger ledger fact fact archive water ledger fact garden archive report analysis water garden garden ledger report archive ledger archive fact archive document report document project document garden notes ledger ledger calendar fact fact calendar ledger topic network notes analysis report calendar document project ledger source analysis source notes garden fact project document topic notes calendar analysis ledger fact network document archive archive ledger document fact ledger calendar project archive document ledger source network fact calendar network notes report calendar report analysis archive document source document garden document document project water garden report analysis fact ledger ledger analysis notes ledger source fact report archive topic document topic archive source source calendar source project calendar report ledger archive notes network report calendar source topic document topic archive analysis notes water ledger water garden archive document calendar topic ledger archive ledger network archive project calendar water document source calendar garden document ledger analysis network topic notes analysis source archive topic report notes ledger report ledger document fact project ledger archive garden ledger project notes water water document report water ledger ledger network garden topic project calendar document topic analysis garden source project ledger calendar analysis report ledger ledger garden garden fact ledger calendar project topic notes ledger calendar source analysis network report water source archive ledger network source calendar report report archive water",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 25: water topic fact archive analysis document water report calendar archive ledger network network calendar topic network ledger notes project topic network ledger calendar fact archive project water report notes topic ledger analysis water archive report water fact topic ledger calendar analysis topic analysis document report calendar ledger fact ledger fact analysis archive source water garden garden network water garden project ledger project analysis ledger water calendar project ledger archive notes report notes project report calendar fact archive notes notes ledger network calendar topic notes archive water document garden ledger water topic garden topic ledger garden project analysis ledger garden network network water ledger report project document source archive water topic water notes document archive archive notes calendar water archive notes analysis network ledger notes analysis analysis project report ledger notes topic calendar ledger source archive garden network archive ledger ledger archive ledger fact garden garden document source archive topic network garden ledger garden ledger source source network topic fact calendar notes topic ledger notes topic garden network fact source notes garden archive calendar water ledger report project report document topic project water analysis calendar source garden network archive network topic project network project water analysis notes fact fact project notes project fact notes calendar water network fact network fact topic report network ledger ledger notes report analysis ledger water network analysis report project analysis notes network garden water network ledger document ledger analysis sour",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 26: notes project calendar ledger ledger ledger ledger fact network water ledger source water fact project water ledger network calendar source archive project network garden fact report calendar garden analysis document source garden network fact source calendar water garden ledger fact fact document garden source garden project archive analysis source source topic notes network document document analysis water project garden ledger document document network project fact ledger document network notes ledger topic fact water fact source project analysis project archive notes ledger source calendar analysis project source ledger document water water document ledger ledger ledger source archive calendar analysis project analysis ledger ledger network water topic ledger fact calendar garden network water project topic project calendar water fact garden topic ledger source document notes garden notes document network fact network topic analysis calendar network notes ledger project source source topic analysis topic ledger project report network report water ledger project calendar archive network garden analysis project water document analysis notes garden calendar network notes archive source ledger source topic project network source network report project topic ledger calendar analysis calendar analysis water water network fact document calendar project ledger report archive document document analysis network source source project project archive calendar report analysis document ledger report archive ledger source fact source fact topic garden report topic document report garden topic network ledger source document ledger calendar fact fact report notes le",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    },
+    {
+      "content": "Cedar notebook 27: archive network topic document archive water analysis garden fact topic calendar archive calendar garden garden garden ledger ledger document network water calendar topic ledger calendar analysis fact project water notes archive source water water report ledger project source notes fact source fact ledger analysis archive project project project ledger garden document calendar analysis garden topic source water report notes topic project notes water project analysis calendar ledger fact calendar report archive ledger ledger ledger analysis water notes project network ledger document garden calendar archive notes report ledger project project water archive ledger topic fact network network network ledger notes analysis topic topic fact project water analysis report document water project report calendar topic topic ledger analysis report network source network network report ledger project source network analysis analysis source ledger document network garden archive notes ledger ledger garden calendar garden notes network ledger report ledger ledger archive garden notes document report water ledger ledger water report notes network archive fact garden network ledger document network analysis archive notes analysis topic project topic network ledger analysis report analysis ledger water ledger analysis topic water notes document source calendar project garden calendar source fact report network analysis network source notes project topic fact ledger water archive calendar network archive garden garden report calendar ledger network report analysis analysis notes archive report analysis ledger calendar document network document document analysis network f",
+      "evidence": "Synthetic fixture",
+      "status": "accepted"
+    }
+  ],
+  "queries": [
+    {
+      "query": "Cedar",
+      "ranked_ids": [
+        2,
+        6,
+        3,
+        28,
+        35,
+        32,
+        34,
+        31,
+        20,
+        10,
+        30,
+        27,
+        26,
+        22,
+        16,
+        11,
+        29,
+        15,
+        24,
+        14,
+        13,
+        33,
+        25,
+        21,
+        18,
+        17,
+        12,
+        9,
+        8,
+        23,
+        19
+      ],
+      "context_ids": [
+        2,
+        6,
+        3,
+        28,
+        35,
+        32,
+        34,
+        31,
+        20,
+        10,
+        30,
+        27,
+        26,
+        22,
+        16,
+        11,
+        29,
+        15,
+        24,
+        14,
+        13
+      ],
+      "units": 7677
+    },
+    {
+      "query": "What database does Cedar use?",
+      "ranked_ids": [
+        3,
+        2,
+        6,
+        28,
+        35,
+        32,
+        34,
+        31,
+        20,
+        10,
+        30,
+        27,
+        26,
+        22,
+        16,
+        11,
+        29,
+        15,
+        24,
+        14,
+        13,
+        33,
+        25,
+        21,
+        18,
+        17,
+        12,
+        9,
+        8,
+        23,
+        19
+      ],
+      "context_ids": [
+        3,
+        2,
+        6,
+        28,
+        35,
+        32,
+        34,
+        31,
+        20,
+        10,
+        30,
+        27,
+        26,
+        22,
+        16,
+        11,
+        29,
+        15,
+        24,
+        14,
+        13
+      ],
+      "units": 7677
+    },
+    {
+      "query": "Cedar OR NOT \" - *",
+      "ranked_ids": [
+        2,
+        6,
+        3,
+        28,
+        35,
+        32,
+        34,
+        31,
+        20,
+        10,
+        30,
+        27,
+        26,
+        22,
+        16,
+        11,
+        29,
+        15,
+        24,
+        14,
+        13,
+        33,
+        25,
+        21,
+        18,
+        17,
+        12,
+        9,
+        8,
+        23,
+        19
+      ],
+      "context_ids": [
+        2,
+        6,
+        3,
+        28,
+        35,
+        32,
+        34,
+        31,
+        20,
+        10,
+        30,
+        27,
+        26,
+        22,
+        16,
+        11,
+        29,
+        15,
+        24,
+        14,
+        13
+      ],
+      "units": 7677
+    },
+    {
+      "query": "café açúcar",
+      "ranked_ids": [
+        4
+      ],
+      "context_ids": [
+        4
+      ],
+      "units": 10
+    },
+    {
+      "query": "猫 東京",
+      "ranked_ids": [
+        5
+      ],
+      "context_ids": [
+        5
+      ],
+      "units": 6
+    },
+    {
+      "query": "\" - *",
+      "ranked_ids": [],
+      "context_ids": [],
+      "units": 0
+    },
+    {
+      "query": "nonexistent",
+      "ranked_ids": [],
+      "context_ids": [],
+      "units": 0
+    },
+    {
+      "query": "archive source calendar project ledger",
+      "ranked_ids": [
+        10,
+        28,
+        31,
+        32,
+        23,
+        13,
+        17,
+        34,
+        18,
+        19,
+        12,
+        24,
+        20,
+        15,
+        29,
+        30,
+        26,
+        14,
+        11,
+        21,
+        35,
+        9,
+        16,
+        27,
+        8,
+        22,
+        33,
+        25
+      ],
+      "context_ids": [
+        10,
+        28,
+        31,
+        32,
+        23,
+        13,
+        17,
+        34,
+        18,
+        19,
+        12,
+        24,
+        20,
+        15,
+        29,
+        30,
+        26,
+        14
+      ],
+      "units": 7650
+    }
+  ],
+  "token_counts": [
+    {
+      "text": "SQLite durability",
+      "units": 5
+    },
+    {
+      "text": "🌱é猫東京123",
+      "units": 6
+    },
+    {
+      "text": "<|endoftext|> is source text",
+      "units": 10
+    },
+    {
+      "text": "São Paulo café sem açúcar.",
+      "units": 7
+    },
+    {
+      "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "units": 38
+    }
+  ]
+}
