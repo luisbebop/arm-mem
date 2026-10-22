@@ -2,12 +2,47 @@ import { randomUUID } from "node:crypto";
 import { closeSync, openSync, unlinkSync } from "node:fs";
 import { DatabaseSync, backup } from "node:sqlite";
 
-export interface MemoryDraft { content: string; evidence: string }
-export interface Memory extends MemoryDraft {
+export const MEMORY_KINDS = [
+  "semantic", "episodic", "procedural", "preference", "decision", "observation", "consolidated",
+] as const;
+export const MEMORY_STATUSES = ["proposed", "accepted", "retired", "rejected", "expired"] as const;
+export const RETENTION_POLICIES = ["permanent", "stable", "temporary", "session"] as const;
+
+export type MemoryKind = typeof MEMORY_KINDS[number];
+export type MemoryStatus = typeof MEMORY_STATUSES[number];
+export type RetentionPolicy = typeof RETENTION_POLICIES[number];
+
+export interface MemoryDraft {
+  content: string;
+  evidence: string;
+  kind?: MemoryKind;
+  importance?: number;
+  confidence?: number;
+  retention?: RetentionPolicy;
+  expires_at?: number | null;
+  expiresAt?: number | null;
+}
+export interface MemoryOptions {
+  author?: string;
+  kind?: MemoryKind;
+  importance?: number;
+  confidence?: number;
+  retention?: RetentionPolicy;
+  expires_at?: number | null;
+  expiresAt?: number | null;
+}
+export interface Memory {
   id: number;
+  content: string;
+  evidence: string;
   source_task: number | null;
   author: string;
-  status: "accepted" | "proposed" | "retired";
+  status: MemoryStatus;
+  kind: MemoryKind;
+  importance: number;
+  confidence: number;
+  retention: RetentionPolicy;
+  expires_at: number | null;
   created_at: number;
 }
 export interface Answer {
@@ -36,6 +71,40 @@ export interface ClaimedTask extends Task {
 }
 export class LostClaim extends Error {}
 
+function oneOf<T extends readonly string[]>(value: unknown, allowed: T, label: string): T[number] {
+  if (typeof value === "string" && (allowed as readonly string[]).includes(value)) return value as T[number];
+  throw new Error(`Invalid ${label}. Expected one of: ${allowed.join(", ")}.`);
+}
+
+function unitInterval(value: unknown, label: string): number {
+  if (typeof value === "number" && Number.isFinite(value) && value >= 0 && value <= 1) return value;
+  throw new Error(`${label} must be a number between 0 and 1.`);
+}
+
+function normalizeMemoryMetadata(options: Partial<MemoryDraft | MemoryOptions> = {}) {
+  const expiresAt = options.expires_at ?? options.expiresAt ?? null;
+  if (expiresAt !== null && (!Number.isFinite(expiresAt) || expiresAt < 0)) {
+    throw new Error("expires_at must be a non-negative Unix timestamp or null.");
+  }
+  return {
+    kind: oneOf(options.kind ?? "semantic", MEMORY_KINDS, "memory kind"),
+    importance: unitInterval(options.importance ?? 0.5, "importance"),
+    confidence: unitInterval(options.confidence ?? 1.0, "confidence"),
+    retention: oneOf(options.retention ?? "stable", RETENTION_POLICIES, "retention policy"),
+    expires_at: expiresAt,
+  };
+}
+
+function splitMemoryOptions(authorOrOptions: string | MemoryOptions = "user") {
+  if (typeof authorOrOptions === "string") {
+    return { author: authorOrOptions, metadata: normalizeMemoryMetadata() };
+  }
+  return {
+    author: authorOrOptions.author ?? "user",
+    metadata: normalizeMemoryMetadata(authorOrOptions),
+  };
+}
+
 /** One local database shared by replaceable worker processes. */
 export class Store {
   readonly identity: string;
@@ -60,17 +129,36 @@ export class Store {
       CREATE TABLE IF NOT EXISTS memories (
         id INTEGER PRIMARY KEY, content TEXT NOT NULL UNIQUE, evidence TEXT NOT NULL,
         source_task INTEGER REFERENCES tasks(id), author TEXT NOT NULL,
-        status TEXT NOT NULL, created_at REAL NOT NULL
+        status TEXT NOT NULL, kind TEXT NOT NULL DEFAULT 'semantic',
+        importance REAL NOT NULL DEFAULT 0.5, confidence REAL NOT NULL DEFAULT 1.0,
+        retention TEXT NOT NULL DEFAULT 'stable', expires_at REAL,
+        created_at REAL NOT NULL
       );
       CREATE VIRTUAL TABLE IF NOT EXISTS memory_search USING fts5(content);
       CREATE INDEX IF NOT EXISTS task_queue ON tasks(state, priority DESC, id);
     `);
+    this.migrateMemorySchema();
     this.db.prepare("INSERT INTO identity SELECT ? WHERE NOT EXISTS (SELECT 1 FROM identity)")
       .run(randomUUID());
     this.identity = this.db.prepare("SELECT id FROM identity").get()!.id as string;
   }
 
   close(): void { this.db.close(); }
+
+  private migrateMemorySchema(): void {
+    const columns = new Set((this.db.prepare("PRAGMA table_info(memories)").all() as { name: string }[])
+      .map(column => column.name));
+    for (const definition of [
+      "kind TEXT NOT NULL DEFAULT 'semantic'",
+      "importance REAL NOT NULL DEFAULT 0.5",
+      "confidence REAL NOT NULL DEFAULT 1.0",
+      "retention TEXT NOT NULL DEFAULT 'stable'",
+      "expires_at REAL",
+    ]) {
+      const name = definition.split(" ")[0]!;
+      if (!columns.has(name)) this.db.exec(`ALTER TABLE memories ADD COLUMN ${definition}`);
+    }
+  }
 
   private transaction<T>(fn: () => T): T {
     this.db.exec("BEGIN IMMEDIATE");
@@ -85,16 +173,21 @@ export class Store {
   }
 
   private insertMemory(content: string, evidence: string, author: string,
-    status: Memory["status"], task: number | null = null): number {
+    status: MemoryStatus, task: number | null = null,
+    options: Partial<MemoryDraft | MemoryOptions> = {}): number {
     content = content.trim();
     evidence = evidence.trim();
+    const metadata = normalizeMemoryMetadata(options);
     if (!content || [...content].length > 2000 || !evidence) {
       throw new Error("Memory needs 1–2000 characters and source evidence.");
     }
+    oneOf(status, MEMORY_STATUSES, "memory status");
     const row = this.db.prepare(`
-      INSERT INTO memories(content, evidence, author, status, source_task, created_at)
-      VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT(content) DO NOTHING RETURNING id
-    `).get(content, evidence, author, status, task, this.now());
+      INSERT INTO memories(content, evidence, author, status, source_task, created_at,
+        kind, importance, confidence, retention, expires_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(content) DO NOTHING RETURNING id
+    `).get(content, evidence, author, status, task, this.now(), metadata.kind,
+      metadata.importance, metadata.confidence, metadata.retention, metadata.expires_at);
     if (row) {
       this.db.prepare("INSERT INTO memory_search(rowid, content) VALUES (?, ?)").run(row.id!, content);
       return row.id as number;
@@ -102,20 +195,22 @@ export class Store {
     return this.db.prepare("SELECT id FROM memories WHERE content=?").get(content)!.id as number;
   }
 
-  /** Explicitly supplied facts are accepted. Exact duplicates retain their original status. */
-  remember(content: string, evidence: string, author = "user"): number {
-    return this.transaction(() => this.insertMemory(content, evidence, author, "accepted"));
+  /** Explicitly supplied facts are accepted. Exact duplicates retain their original status and metadata. */
+  remember(content: string, evidence: string, authorOrOptions: string | MemoryOptions = "user"): number {
+    const { author, metadata } = splitMemoryOptions(authorOrOptions);
+    return this.transaction(() => this.insertMemory(content, evidence, author, "accepted", null, metadata));
   }
 
   /** Store long source text verbatim in overlapping 1,800-character chunks. */
-  ingest(text: string, evidence: string, author = "user"): number[] {
+  ingest(text: string, evidence: string, authorOrOptions: string | MemoryOptions = "user"): number[] {
     if (!text.trim()) throw new Error("Source text must not be blank.");
     const chars = [...text];
+    const { author, metadata } = splitMemoryOptions(authorOrOptions);
     return this.transaction(() => {
       const ids: number[] = [];
       for (let start = 0; start < chars.length; start += 1600) {
         const part = chars.slice(start, start + 1800).join("");
-        if (part.trim()) ids.push(this.insertMemory(part, evidence, author, "accepted"));
+        if (part.trim()) ids.push(this.insertMemory(part, evidence, author, "accepted", null, metadata));
         if (start + 1800 >= chars.length) break;
       }
       return ids;
@@ -135,8 +230,8 @@ export class Store {
     `).all(match, limit) as unknown as Memory[];
   }
 
-  review(id: number, status: "accepted" | "retired"): void {
-    if (status !== "accepted" && status !== "retired") throw new Error("Invalid memory status.");
+  review(id: number, status: Exclude<MemoryStatus, "proposed">): void {
+    oneOf(status, MEMORY_STATUSES.filter(value => value !== "proposed"), "review status");
     if (!this.db.prepare("UPDATE memories SET status=? WHERE id=?").run(status, id).changes) {
       throw new Error("Memory not found.");
     }
@@ -180,7 +275,7 @@ export class Store {
         if (typeof memory?.content !== "string" || typeof memory?.evidence !== "string") {
           throw new Error("A memory proposal needs content and evidence strings.");
         }
-        this.insertMemory(memory.content, memory.evidence, task.worker, "proposed", task.id);
+        this.insertMemory(memory.content, memory.evidence, task.worker, "proposed", task.id, memory);
       }
     });
   }

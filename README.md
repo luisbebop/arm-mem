@@ -96,6 +96,23 @@ or saving the answer. Neither automatically turns an answer into accepted memory
 in overlapping chunks. Both explicitly accept the supplied material for retrieval.
 Acceptance means eligible to use, not independently verified as true.
 
+Each memory also carries lightweight scientific metadata. `kind` distinguishes
+semantic facts, episodic events, procedures, preferences, decisions, observations,
+and consolidated summaries. `status` tracks the lifecycle: proposed memories need
+review; accepted memories are eligible for recall; retired, rejected, and expired
+memories stay on disk for audit but are excluded from recall. `importance` means
+expected utility or salience, while `confidence` means source trust; recurrence
+and scoring work should not collapse those concepts into truth.
+
+```ts
+store.remember("Cedar uses SQLite.", "Architecture decision", {
+  kind: "decision",
+  importance: 0.9,
+  confidence: 1.0,
+  retention: "stable",
+});
+```
+
 Search uses **SQLite FTS5/BM25** ranking: up to 100 accepted
 records, packed into an 8,000-unit evidence budget. Each record costs the larger
 of its token count or character count divided by four, rounded up. This allowance

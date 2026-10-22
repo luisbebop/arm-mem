@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 import { readFileSync } from "node:fs";
 import { Store, deepseek, recallContext, workOnce } from "./index.js";
+import type { MemoryKind, MemoryOptions, RetentionPolicy } from "./index.js";
 
 const help = `arm-mem — shared SQLite memory + DeepSeek Flash/max
 
   arm-mem init
-  arm-mem remember "fact" "source"
-  arm-mem ingest file.txt "source"
+  arm-mem remember "fact" "source" [--kind decision --importance 0.9]
+  arm-mem ingest file.txt "source" [--kind semantic]
   arm-mem recall "query"
   arm-mem ask "question"          Answer now, without queuing
   arm-mem add "task" [priority]
@@ -15,12 +16,47 @@ const help = `arm-mem — shared SQLite memory + DeepSeek Flash/max
   arm-mem accept | retire | retry ID
   arm-mem backup new-file.db
 
+Memory options for remember/ingest: --author, --kind, --importance, --confidence,
+  --retention, --expires-at. Kinds: semantic, episodic, procedural, preference,
+  decision, observation, consolidated. Retention: permanent, stable, temporary, session.
+
 Environment: DEEPSEEK_API_KEY, ARM_MEM_DB (default: ./arm-mem.db)
 `;
 
+function needValue(flag: string, value: string | undefined): string {
+  if (value === undefined) throw new Error(`${flag} requires a value.`);
+  return value;
+}
+
+function parseMemoryArgs(raw: string[]): { args: string[]; options: MemoryOptions } {
+  const args: string[] = [];
+  const options: MemoryOptions = {};
+  for (let i = 0; i < raw.length; i++) {
+    const arg = raw[i]!;
+    switch (arg) {
+      case "--author": options.author = needValue(arg, raw[++i]); break;
+      case "--kind": options.kind = needValue(arg, raw[++i]) as MemoryKind; break;
+      case "--importance": options.importance = Number(needValue(arg, raw[++i])); break;
+      case "--confidence": options.confidence = Number(needValue(arg, raw[++i])); break;
+      case "--retention": options.retention = needValue(arg, raw[++i]) as RetentionPolicy; break;
+      case "--expires-at": {
+        const value = needValue(arg, raw[++i]);
+        options.expiresAt = value === "null" || value === "none" ? null : Number(value);
+        break;
+      }
+      default: args.push(arg);
+    }
+  }
+  return { args, options };
+}
+
 async function main(): Promise<void> {
-  const [command, ...args] = process.argv.slice(2);
+  const [command, ...rawArgs] = process.argv.slice(2);
   if (!command || command === "--help" || command === "help") { console.log(help); return; }
+  const parsed = command === "remember" || command === "ingest"
+    ? parseMemoryArgs(rawArgs)
+    : { args: rawArgs, options: undefined };
+  const args = parsed.args;
   const arity: Record<string, [number, number]> = {
     init: [0, 0], remember: [2, 2], ingest: [2, 2], recall: [1, 1], ask: [1, 1],
     add: [1, 2], work: [0, 1], tasks: [0, 0], memories: [0, 0],
@@ -35,8 +71,8 @@ async function main(): Promise<void> {
     let result: unknown;
     switch (command) {
       case "init": result = { identity: store.identity }; break;
-      case "remember": result = { memory: store.remember(first, second) }; break;
-      case "ingest": result = { memories: store.ingest(readFileSync(first, "utf8"), second) }; break;
+      case "remember": result = { memory: store.remember(first, second, parsed.options) }; break;
+      case "ingest": result = { memories: store.ingest(readFileSync(first, "utf8"), second, parsed.options) }; break;
       case "recall": result = recallContext(store, first); break;
       case "ask": {
         const context = recallContext(store, first);

@@ -50,6 +50,42 @@ test("a new process inherits identity and only reviewed agent memories", async t
   assert.deepEqual(JSON.parse(store.tasks()[1].result).used_memory_ids, [memory.id]);
 });
 
+test("accepted memories carry typed metadata and lifecycle state", t => {
+  const { store } = fixture(t);
+  const id = store.remember("Cedar uses SQLite.", "Architecture decision", {
+    author: "architect", kind: "decision", importance: 0.9, confidence: 0.8,
+    retention: "permanent", expiresAt: 12345,
+  });
+  const memory = store.memories()[0];
+  assert.equal(memory.id, id);
+  assert.equal(memory.author, "architect");
+  assert.equal(memory.kind, "decision");
+  assert.equal(memory.importance, 0.9);
+  assert.equal(memory.confidence, 0.8);
+  assert.equal(memory.retention, "permanent");
+  assert.equal(memory.expires_at, 12345);
+  assert.equal(store.recall("SQLite")[0].id, id);
+
+  store.review(id, "rejected");
+  assert.deepEqual(store.recall("SQLite"), []);
+  store.review(id, "accepted");
+  assert.equal(store.recall("SQLite")[0].id, id);
+  store.review(id, "expired");
+  assert.deepEqual(store.recall("SQLite"), []);
+});
+
+test("memory metadata is validated and exact duplicates keep original metadata", t => {
+  const { store } = fixture(t);
+  const id = store.remember("Cedar uses SQLite.", "Architecture decision", { kind: "decision" });
+  assert.equal(store.remember("Cedar uses SQLite.", "Repeated claim", { kind: "semantic" }), id);
+  assert.equal(store.memories()[0].kind, "decision");
+  assert.throws(() => store.remember("Invalid kind", "test", { kind: "belief" }), /memory kind/);
+  assert.throws(() => store.remember("Invalid importance", "test", { importance: 2 }), /importance/);
+  assert.throws(() => store.remember("Invalid confidence", "test", { confidence: -0.1 }), /confidence/);
+  assert.throws(() => store.remember("Invalid retention", "test", { retention: "forever" }), /retention/);
+  assert.throws(() => store.remember("Invalid expiry", "test", { expiresAt: -1 }), /expires_at/);
+});
+
 test("independent worker processes claim each queued task exactly once", async t => {
   const { store, path } = fixture(t);
   for (let i = 0; i < 12; i++) store.enqueue(`Task ${i}`, i === 11 ? 10 : 0);

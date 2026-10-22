@@ -38,7 +38,9 @@ export function deepseek(options: DeepSeekOptions = {}): Agent {
             "If records conflict, describe both claims and their sources; do not silently choose one. " +
             "If evidence is missing, say so. Be concise and cite memory IDs for factual claims." },
           { role: "user", content: JSON.stringify({ task: prompt, memory: memories.map(m => ({
-            id: m.id, content: m.content, evidence: m.evidence, author: m.author,
+            id: m.id, kind: m.kind, importance: m.importance, confidence: m.confidence,
+            retention: m.retention, expires_at: m.expires_at, content: m.content,
+            evidence: m.evidence, author: m.author,
           })) }) },
         ],
       }),
